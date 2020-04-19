@@ -32,18 +32,12 @@
 </template>
 
 <script>
-import TutorialToken from './TutorialToken'
-import SimpleStorage from './SimpleStorage'
-import ComplexStorage from './ComplexStorage'
 import Prov from './Prov'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'app',
   components: {
-    ComplexStorage,
-    TutorialToken,
-    SimpleStorage,
 	Prov
   },
 

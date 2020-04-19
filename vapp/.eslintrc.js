@@ -23,6 +23,7 @@ module.exports = {
 		'no-irregular-whitespace':'off',
 		'no-unused-vars':'off',
 		'no-mixed-spaces-and-tabs':'off',
-		'vue/no-unused-components':'off'
+		'vue/no-unused-components':'off',
+		'vue/require-v-for-key':'off'
     }
 };
