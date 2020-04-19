@@ -31,7 +31,7 @@
 										<el-button v-else type="danger" @click="submit"> 查看</el-button>
 									</el-col>
 									<el-col :span="5">
-										<el-button type="success" @click="dialogVisible=true" :disabled="JSON.stringify(object) === '{}'?true:false">操作</el-button>
+										<el-button type="success" @click="dialogVisible=true" :disabled="JSON.stringify(object) === '{}'?false:false">操作</el-button>
 									</el-col>
 								</el-row>
 							</div>
@@ -157,7 +157,7 @@
 		watch: {
 			radio(newValue, oldValue) {
 				this.click = false;
-				console.log(newValue)
+				// console.log(newValue)
 			}
 		},
 		created() {
@@ -214,7 +214,8 @@
 				let eventMethods = drizzle.contracts.ProvEvent.methods
 				//set object
 				if (this.radio == 1) {
-					console.log('i am here set')
+					// console.log(typeof(this.hash))
+					// console.log('i am here set')
 					objectMethods.setObject(this.hash, this.file.name, this.file.name.split('.')[1]).send({
 						from: account
 					}).then((response) => {
@@ -224,6 +225,7 @@
 					})
 				} else {
 					console.log('i am here get')
+					// this.getEvents()
 					this.getObject()
 					this.click = true
 				}
@@ -231,6 +233,7 @@
 			getObject() {
 				let drizzle = this.drizzleInstance
 				drizzle.contracts.ProvObject.methods.getObject(this.hash).call().then((response) => {
+					console.log(response)
 					this.object = {
 						hash: this.hash,
 						properties: response.properties,
@@ -287,9 +290,10 @@
 				rd.onload = e => {
 					//this.readAsArrayBuffer函数内，会回调this.onload函数。在这里处理结果
 					let file = e.target.result //file->filetext
-					console.log(file)
+					// console.log(file)
 					if (this.fileHash.length == 0) {
 						const hash = CryptoJS.SHA3(file).toString()
+						// const hash = CryptoJS.SHA256(file).toString()
 						this.fileHash.push({
 							file: file,
 							hash: hash

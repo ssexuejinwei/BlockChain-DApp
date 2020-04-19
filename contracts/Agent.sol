@@ -1,5 +1,6 @@
 pragma solidity >=0.4.21 <0.7.0;
 import "./Strings.sol";
+pragma experimental ABIEncoderV2;
 
 contract Agent {
     function setEvent(string memory _agentId,string memory _eventId)public;
@@ -97,6 +98,9 @@ contract ProvAgent is Agent {
         return (_agentId,provAgents[_agentId].events[_eventIndex]);
     }
 
+    function getAgent(string memory _agentId) public view returns (AgentData memory){
+        return provAgents[_agentId];
+    }
     function getAgentType(string memory _agentId) public view returns (string memory, string memory){
         return (_agentId,provAgents[_agentId].agentType);
     }

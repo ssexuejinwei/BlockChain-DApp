@@ -405,7 +405,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 451,
-        "sourceUnit": 1633,
+        "sourceUnit": 1697,
         "src": "33:23:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1522,7 +1522,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Strings_$1632",
+              "typeIdentifier": "t_contract$_Strings_$1696",
               "typeString": "contract Strings"
             },
             "typeName": {
@@ -1530,10 +1530,10 @@
               "id": 95,
               "name": "Strings",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1632,
+              "referencedDeclaration": 1696,
               "src": "1148:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Strings_$1632",
+                "typeIdentifier": "t_contract$_Strings_$1696",
                 "typeString": "contract Strings"
               }
             },
@@ -2136,10 +2136,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              1652,
-                              1653
+                              2432,
+                              2433
                             ],
-                            "referencedDeclaration": 1653,
+                            "referencedDeclaration": 2433,
                             "src": "1717:6:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
@@ -2549,10 +2549,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              1652,
-                              1653
+                              2432,
+                              2433
                             ],
-                            "referencedDeclaration": 1653,
+                            "referencedDeclaration": 2433,
                             "src": "2019:6:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
@@ -2945,10 +2945,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              1652,
-                              1653
+                              2432,
+                              2433
                             ],
-                            "referencedDeclaration": 1653,
+                            "referencedDeclaration": 2433,
                             "src": "2328:6:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
@@ -3837,7 +3837,7 @@
                               "referencedDeclaration": 96,
                               "src": "2984:2:0",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_Strings_$1632",
+                                "typeIdentifier": "t_contract$_Strings_$1696",
                                 "typeString": "contract Strings"
                               }
                             },
@@ -3848,7 +3848,7 @@
                             "lValueRequested": false,
                             "memberName": "equal",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1631,
+                            "referencedDeclaration": 1695,
                             "src": "2984:8:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bool_$",
@@ -4464,7 +4464,7 @@
                               "referencedDeclaration": 96,
                               "src": "3398:2:0",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_Strings_$1632",
+                                "typeIdentifier": "t_contract$_Strings_$1696",
                                 "typeString": "contract Strings"
                               }
                             },
@@ -4475,7 +4475,7 @@
                             "lValueRequested": false,
                             "memberName": "equal",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1631,
+                            "referencedDeclaration": 1695,
                             "src": "3398:8:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bool_$",
@@ -5946,7 +5946,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 451,
-        "sourceUnit": 1633,
+        "sourceUnit": 1697,
         "src": "33:23:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -7063,7 +7063,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Strings_$1632",
+              "typeIdentifier": "t_contract$_Strings_$1696",
               "typeString": "contract Strings"
             },
             "typeName": {
@@ -7071,10 +7071,10 @@
               "id": 95,
               "name": "Strings",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1632,
+              "referencedDeclaration": 1696,
               "src": "1148:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Strings_$1632",
+                "typeIdentifier": "t_contract$_Strings_$1696",
                 "typeString": "contract Strings"
               }
             },
@@ -7677,10 +7677,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              1652,
-                              1653
+                              2432,
+                              2433
                             ],
-                            "referencedDeclaration": 1653,
+                            "referencedDeclaration": 2433,
                             "src": "1717:6:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
@@ -8090,10 +8090,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              1652,
-                              1653
+                              2432,
+                              2433
                             ],
-                            "referencedDeclaration": 1653,
+                            "referencedDeclaration": 2433,
                             "src": "2019:6:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
@@ -8486,10 +8486,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              1652,
-                              1653
+                              2432,
+                              2433
                             ],
-                            "referencedDeclaration": 1653,
+                            "referencedDeclaration": 2433,
                             "src": "2328:6:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
@@ -9378,7 +9378,7 @@
                               "referencedDeclaration": 96,
                               "src": "2984:2:0",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_Strings_$1632",
+                                "typeIdentifier": "t_contract$_Strings_$1696",
                                 "typeString": "contract Strings"
                               }
                             },
@@ -9389,7 +9389,7 @@
                             "lValueRequested": false,
                             "memberName": "equal",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1631,
+                            "referencedDeclaration": 1695,
                             "src": "2984:8:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bool_$",
@@ -10005,7 +10005,7 @@
                               "referencedDeclaration": 96,
                               "src": "3398:2:0",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_Strings_$1632",
+                                "typeIdentifier": "t_contract$_Strings_$1696",
                                 "typeString": "contract Strings"
                               }
                             },
@@ -10016,7 +10016,7 @@
                             "lValueRequested": false,
                             "memberName": "equal",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1631,
+                            "referencedDeclaration": 1695,
                             "src": "3398:8:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bool_$",
@@ -11526,12 +11526,12 @@
         }
       },
       "links": {},
-      "address": "0xeD90F38c9F056536B7feD165c7431eA7fE49cFAd",
-      "transactionHash": "0xf9a768825ee08f4a204e588a5a8b19a5703265042b656e6bf2a40713d69bd2a6"
+      "address": "0x6d0a4051ed208e5dF1B37A4d33eFD107aC7B0d42",
+      "transactionHash": "0x81d31858e916fdbbd85faec549c3c7103dc8d44f99c3c04fa23c8904158750fa"
     }
   },
   "schemaVersion": "3.1.0",
-  "updatedAt": "2020-04-19T14:02:59.582Z",
+  "updatedAt": "2020-04-19T14:42:07.968Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

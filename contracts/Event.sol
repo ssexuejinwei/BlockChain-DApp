@@ -1,9 +1,11 @@
 pragma solidity >=0.4.21 <0.7.0;
+pragma experimental ABIEncoderV2;
 import "./Strings.sol";
 
 contract Event {
     function setEventType(string memory _eventId, string memory _eventType)public;
-    function setEvent(string memory _eventId,string memory _agentId,string memory _objectHash,string memory _time)public;
+    function setEvent(string memory _eventId,string memory _agentId,
+                    string memory _objectHash,string memory _time,string memory _eventType)public;
 
     function getEventExists(string memory _eventId)public view returns (bool);
     function getEventTypeExists(string memory _eventId, string memory _eventType)public view returns (bool);
@@ -27,7 +29,7 @@ contract ProvEvent is Event {
 
 
     mapping(string => EventData) private provEvents;
-
+    string[] events;
     event EventTypeSet(string _eventId, string _eventType);
     event EventSet(string _eventId, string _objectHash, string _time);
 
@@ -39,7 +41,8 @@ contract ProvEvent is Event {
         emit EventTypeSet(_eventId,_eventType);
     }
 
-    function setEvent(string memory _eventId,string memory _agentId,string memory _objectHash,string memory _time) public {
+    function setEvent(string memory _eventId,string memory _agentId,
+                        string memory _objectHash,string memory _time,string memory _eventType) public {
         if (getEventExists(_eventId)) {
             revert(" the event is already exists");
         }
@@ -47,6 +50,7 @@ contract ProvEvent is Event {
         provEvents[_eventId].objectHash = _objectHash;
         provEvents[_eventId].agentId = _agentId;
         provEvents[_eventId].time = _time;
+        provEvents[_eventId].EventType = _eventType;
         emit EventSet(_eventId,_objectHash,_time);
 
     }
@@ -61,6 +65,10 @@ contract ProvEvent is Event {
 
     function getAgent(string memory _eventId) public view returns (string memory,string memory) {
         return (_eventId,provEvents[_eventId].agentId);
+    }
+
+    function getEvent(string memory _eventId) public view returns (EventData memory){
+        return provEvents[_eventId];
     }
 
     function getObject(string memory _eventId) public view returns (string memory, string memory){

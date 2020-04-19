@@ -1,9 +1,9 @@
 pragma solidity >=0.4.21 <0.7.0;
 pragma experimental ABIEncoderV2;
+
 import "./Strings.sol";
 
 contract Object {
-
     function setPropertyType(string memory _propType)public;
     function setProperties(string memory _objectHash, string memory _propType,string memory _propValue)public;
     function setObject(string memory _objectHash,string memory _category,string memory _format)public;
@@ -18,12 +18,7 @@ contract Object {
 
     function getNumEvents(string memory _objectHash) public view returns (uint256);
     function getNumAgents(string memory _objectHash) public view returns (uint256);
-    function getNumObject() public view returns (uint256);
 
-    function getObject(uint256 _index) public view returns (string memory);
-    function getObjectPropertiesLength(string memory _objectHash) public view returns (uint256);
-    function getObjectPropertiesLength(string memory _objectHash,uint256 _propertiesIndex) public view returns (string memory, string memory);
-    function getObjectCategoryAndFormat(string memory _objectHash) public view returns (string memory,string memory);
     function getEvent(string memory _objectHash, uint256 _eventIndex) public view returns (string memory, string memory);
     function getAgent(string memory _objectHash, uint256 _agentIndex) public view returns (string memory, string memory);
 }
@@ -46,7 +41,7 @@ contract ProvObject is Object {
     }
 
     string[] propTypes;
-    string[] public objects;
+    string[] objects;
 
     mapping(string => ObjectData) private provObjects;
 
@@ -62,6 +57,8 @@ contract ProvObject is Object {
         }
         propTypes.push(_propType);
         emit ObjectSetPropertyType(_propType);
+
+
     }
 
     function setProperties(string memory _objectHash,string memory _propType,string memory _propValue )public {
@@ -82,7 +79,6 @@ contract ProvObject is Object {
         provObjects[_objectHash].isValid = true;
         provObjects[_objectHash].category = _category;
         provObjects[_objectHash].format = _format;
-        objects.push(_objectHash);
         emit ObjectSet(_objectHash,_category,_format);
     }
 
@@ -163,28 +159,8 @@ contract ProvObject is Object {
         return provObjects[_objectHash].agents.length;
     }
 
-    function getNumObject() public view returns (uint256){
-        return objects.length;
-    }
-
-
-    function getObject(uint256 _index) public view returns (string memory){
-        return objects[_index];
-    }
-
-    function getObject(string memory _objectHash) public view returns (ObjectData memory){
+    function getObject(string memory _objectHash) public view returns (ObjectData memory) {
         return provObjects[_objectHash];
-    }
-
-    function getObjectPropertiesLength(string memory _objectHash) public view returns (uint256) {
-        return provObjects[_objectHash].properties.length;
-    }
-    function getObjectPropertiesLength(string memory _objectHash,uint256 _propertiesIndex) public view returns (string memory, string memory){
-        return (provObjects[_objectHash].properties[_propertiesIndex].propType, provObjects[_objectHash].properties[_propertiesIndex].propValue);
-    }
-
-    function getObjectCategoryAndFormat(string memory _objectHash) public view returns (string memory,string memory){
-        return (provObjects[_objectHash].category,provObjects[_objectHash].format);
     }
     function getEvent(string memory _objectHash, uint256 _eventIndex) public view returns (string memory, string memory) {
         return (_objectHash, provObjects[_objectHash].events[_eventIndex]);
