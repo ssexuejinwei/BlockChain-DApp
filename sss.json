@@ -1,0 +1,114 @@
+{
+    "accounts": {
+        "0": "0xE718B686724Fe1005Be3641b611623e49e0bd2c8"
+    },
+    "accountBalances": {
+        "0xE718B686724Fe1005Be3641b611623e49e0bd2c8": "0"
+    },
+    "contracts": {
+        "SimpleStorage": {
+            "initialized": true,
+            "synced": true,
+            "storedData": {
+                "0x0": {
+                    "args": {},
+                    "fnIndex": 1,
+                    "value": null,
+                    "error": {}
+                }
+            },
+            "events": []
+        },
+        "ComplexStorage": {
+            "initialized": true,
+            "synced": true,
+            "constuint": {},
+            "deviceDataArray": {},
+            "investmentsDeadlineTimeStamp": {},
+            "investmentsLimit": {},
+            "singleDD": {
+                "0x0": {
+                    "args": {},
+                    "fnIndex": 5,
+                    "value": null,
+                    "error": {}
+                }
+            },
+            "storeduint1": {},
+            "string1": {
+                "0x0": {
+                    "args": {},
+                    "fnIndex": 7,
+                    "value": null,
+                    "error": {}
+                }
+            },
+            "string2": {
+                "0x0": {
+                    "args": {},
+                    "fnIndex": 8,
+                    "value": null,
+                    "error": {}
+                }
+            },
+            "string3": {},
+            "uintarray": {},
+            "get_uintarray": {
+                "0x0": {
+                    "args": {},
+                    "fnIndex": 11,
+                    "value": null,
+                    "error": {}
+                }
+            },
+            "events": []
+        },
+        "TutorialToken": {
+            "initialized": true,
+            "synced": true,
+            "INITIAL_SUPPLY": {},
+            "allowance": {},
+            "balanceOf": {
+                "0x859aef58c9b21a954c4a8d6bc0255bf871c9d52e47bd2b028c4c29f43c3723a2": {
+                    "args": {
+                        "0": "0xE718B686724Fe1005Be3641b611623e49e0bd2c8"
+                    },
+                    "fnIndex": 6,
+                    "value": null,
+                    "error": {}
+                }
+            },
+            "decimals": {},
+            "name": {},
+            "symbol": {
+                "0x0": {
+                    "args": {},
+                    "fnIndex": 11,
+                    "value": null,
+                    "error": {}
+                }
+            },
+            "totalSupply": {
+                "0x0": {
+                    "args": {},
+                    "fnIndex": 12,
+                    "value": null,
+                    "error": {}
+                }
+            },
+            "events": []
+        }
+    },
+    "currentBlock": {},
+    "drizzleStatus": {
+        "initialized": true
+    },
+    "transactions": {},
+    "transactionStack": [
+        "TEMP_1587181224749"
+    ],
+    "web3": {
+        "status": "initialized",
+        "networkId": 5777
+    }
+}

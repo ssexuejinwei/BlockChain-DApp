@@ -1,7 +1,9 @@
 pragma solidity >=0.4.21 <0.7.0;
+pragma experimental ABIEncoderV2;
 import "./Strings.sol";
 
 contract Object {
+
     function setPropertyType(string memory _propType)public;
     function setProperties(string memory _objectHash, string memory _propType,string memory _propValue)public;
     function setObject(string memory _objectHash,string memory _category,string memory _format)public;
@@ -168,6 +170,10 @@ contract ProvObject is Object {
 
     function getObject(uint256 _index) public view returns (string memory){
         return objects[_index];
+    }
+
+    function getObject(string memory _objectHash) public view returns (ObjectData memory){
+        return provObjects[_objectHash];
     }
 
     function getObjectPropertiesLength(string memory _objectHash) public view returns (uint256) {
