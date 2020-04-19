@@ -60,7 +60,7 @@ contract ProvEvent is Event {
     }
 
     function getEventTypeExists(string memory _eventId, string memory _eventType)public view returns (bool){
-        return st.equal(_eventType,provEvents[_eventId].EventType);
+        return equal(_eventType,provEvents[_eventId].EventType);
     }
 
     function getAgent(string memory _eventId) public view returns (string memory,string memory) {
@@ -80,5 +80,9 @@ contract ProvEvent is Event {
 
     function getTime(string memory _eventId) public view returns (string memory, string memory) {
         return (_eventId,provEvents[_eventId].time);
+    }
+
+    function equal(string memory s1, string memory s2)public pure returns(bool){
+        return (keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2)));
     }
 }

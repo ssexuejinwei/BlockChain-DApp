@@ -31,7 +31,7 @@
 										<el-button v-else type="danger" @click="submit"> 查看</el-button>
 									</el-col>
 									<el-col :span="5">
-										<el-button type="success" @click="dialogVisible=true" :disabled="JSON.stringify(object) === '{}'?false:false">操作</el-button>
+										<el-button type="success" @click="dialogVisible=true" :disabled="JSON.stringify(object) === '{}'?true:false">操作</el-button>
 									</el-col>
 								</el-row>
 							</div>
@@ -96,26 +96,21 @@
 			</el-select>
 			<div v-if="value ==='setProperties' ">
 				<p>设置实体属性</p>
-				<drizzle-contract-form contractName="ProvObject" method="setProperties" :placeholders="p1" />
-			</div>
-			<div v-if="value ==='setEventType' ">
-				<p>设置事件类型</p>
-				<p>事件ID：{{object.events}}</p>
-				<drizzle-contract-form contractName="ProvEvent" method="setEventType" :placeholders="p2" />
+				<drizzle-contract-form contractName="ProvObject" method="setProperties" />
 			</div>
 			<div v-if="value ==='setEvent' ">
 				<p>设置事件</p>
 				<p>事件ID：{{object.events}}</p>
-				<drizzle-contract-form contractName="ProvObject" method="setEvent" :placeholders="p2" />
+				<drizzle-contract-form contractName="ProvObject" method="setEvent" />
 				<br><br>
-				<drizzle-contract-form contractName="ProvEvent" method="setEvent" :placeholders="p3" />
+				<drizzle-contract-form contractName="ProvEvent" method="setEvent" />
 			</div>
 			<div v-if="value ==='setAgent' ">
 				<p>设置代理</p>
 				<p>代理ID：{{object.agentId}}</p>
-				<drizzle-contract-form contractName="ProvObject" method="setAgent" :placeholders="p4" />
+				<drizzle-contract-form contractName="ProvObject" method="setAgent"  />
 				<br><br>
-				<drizzle-contract-form contractName="ProvAgent" method="setAgent" :placeholders="p5" />
+				<drizzle-contract-form contractName="ProvAgent" method="setAgent" />
 			</div>
 			<span slot="footer" class="dialog-footer">
 				<el-button type="primary" @click="editEnsure()">确 定</el-button>
@@ -161,11 +156,12 @@
 			}
 		},
 		created() {
-			
+			this.accountId = CryptoJS.SHA256(this.activeAccount).toString()
 		},
 		data() {
 			return {
 				radio: 1,
+				accountId:"",
 				activeTabName: "first",
 				fileList: [],
 				fileHash: [], //fileText:'',hash:''
@@ -184,10 +180,7 @@
 				}, {
 					value: 'setEvent',
 					label: 'setEvent'
-				}, {
-					value: 'setEventType',
-					label: 'setEventType'
-				}, {
+				},{
 					value: 'setAgent',
 					label: 'setAgent'
 				}],
@@ -271,6 +264,7 @@
 				for (let agentId of this.object.agents) {
 					drizzle.contracts.ProvAgent.methods.getAgent(agentId).call().then((response) => {
 						this.agents.push({
+							agentId:agentId,
 							objects: response.objects,
 							events: response.events,
 							name: response.name,
@@ -292,8 +286,8 @@
 					let file = e.target.result //file->filetext
 					// console.log(file)
 					if (this.fileHash.length == 0) {
-						const hash = CryptoJS.SHA3(file).toString()
-						// const hash = CryptoJS.SHA256(file).toString()
+						// const hash = CryptoJS.SHA3(file).toString()
+						const hash = CryptoJS.SHA256(file).toString()
 						this.fileHash.push({
 							file: file,
 							hash: hash

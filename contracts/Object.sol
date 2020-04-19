@@ -94,14 +94,14 @@ contract ProvObject is Object {
         if (getObjectAgentExists(_objectHash, _agentId)) {
             revert("the agent is already exists");
         }
-        provObjects[_objectHash].events.push(_agentId);
+        provObjects[_objectHash].agents.push(_agentId);
         emit ObjectSetAgent(_objectHash,_agentId);
     }
 
     function getPropertyTypeExists(string memory _propType)public view returns (bool){
         bool flag = false;
         for (uint index = 0; index < propTypes.length; index++) {
-            if(st.equal(_propType,propTypes[index])) {
+            if(equal(_propType,propTypes[index])) {
                 flag = true;
                 break;
             }
@@ -112,7 +112,8 @@ contract ProvObject is Object {
         bool flag = false;
         for (uint index = 0; index < provObjects[_objectHash].properties.length; index++) {
             ObjectProperties memory i = provObjects[_objectHash].properties[index];
-            if(st.equal(i.propType,_propType) && st.equal(i.propValue,_propValue)) {
+            if(equal(i.propType,_propType) && equal(i.propValue,_propValue)) {
+
                 flag = true;
                 break;
             }
@@ -128,7 +129,7 @@ contract ProvObject is Object {
         bool objectExists = provObjects[_objectHash].isValid;
         bool eventExists = false;
         for (uint index = 0; index < provObjects[_objectHash].events.length; index++) {
-            if (st.equal(_eventId,provObjects[_objectHash].events[index]))
+            if (equal(_eventId,provObjects[_objectHash].events[index]))
             // if (keccak256(abi.encodePacked(_eventId)) == keccak256(abi.encodePacked(provObjects[_objectHash].events[index])))
             {
                 eventExists = true;
@@ -142,7 +143,8 @@ contract ProvObject is Object {
         bool objectExists = provObjects[_objectHash].isValid;
         bool agentExists = false;
         for (uint index = 0; index < provObjects[_objectHash].events.length; index++) {
-            if (keccak256(abi.encodePacked(_agentId)) == keccak256(abi.encodePacked(provObjects[_objectHash].events[index])))
+            if (equal(_agentId,provObjects[_objectHash].events[index]))
+            // if (keccak256(abi.encodePacked(_agentId)) == keccak256(abi.encodePacked(provObjects[_objectHash].events[index])))
             {
                 agentExists = true;
                 break;
@@ -168,5 +170,9 @@ contract ProvObject is Object {
 
     function getAgent(string memory _objectHash, uint256 _agentIndex) public view returns (string memory, string memory) {
         return (_objectHash, provObjects[_objectHash].agents[_agentIndex]);
+    }
+
+    function equal(string memory s1, string memory s2)public pure returns(bool){
+        return (keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2)));
     }
 }

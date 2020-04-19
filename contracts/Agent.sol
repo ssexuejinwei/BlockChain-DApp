@@ -71,7 +71,7 @@ contract ProvAgent is Agent {
         string[] memory array = provAgents[_agentId].objects;
         bool flag = false;
         for (uint index = 0; index < array.length; index++) {
-            if(st.equal(_objectHash,array[index])) {
+            if(equal(_objectHash,array[index])) {
                 flag = true;
                 break;
             }
@@ -82,7 +82,7 @@ contract ProvAgent is Agent {
         string[] memory array = provAgents[_agentId].events;
         bool flag = false;
         for (uint index = 0; index < array.length; index++) {
-            if(st.equal(_eventId,array[index])) {
+            if(equal(_eventId,array[index])) {
                 flag = true;
                 break;
             }
@@ -107,5 +107,9 @@ contract ProvAgent is Agent {
 
     function getAgentName(string memory _agentId) public view returns (string memory, string memory){
         return (_agentId,provAgents[_agentId].name);
+    }
+
+    function equal(string memory s1, string memory s2)public pure returns(bool){
+        return (keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2)));
     }
 }
