@@ -275,6 +275,7 @@
 			},
 			beforeUpload(file) {
 				this.read(file)
+				console.log('file',file)
 				this.file = file
 			},
 			read(f) {
@@ -286,8 +287,8 @@
 					let file = e.target.result //file->filetext
 					// console.log(file)
 					if (this.fileHash.length == 0) {
-						// const hash = CryptoJS.SHA3(file).toString()
-						const hash = CryptoJS.SHA256(file).toString()
+						const hash = CryptoJS.SHA3(file).toString()
+						// const hash = CryptoJS.SHA256(file).toString()
 						this.fileHash.push({
 							file: file,
 							hash: hash
